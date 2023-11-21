@@ -30,6 +30,12 @@ app.post("/send-email", async (req, res) => {
         content: item.stripped_text,
       };
     });
+    console.log({
+      ticket_id: req.body.ticket_id,
+      customer_id: response.data.customer.id,
+      brand: "fellow",
+      messages: formattedText,
+    });
 
     const suggestedReplyResponse = await fetch(
       "https://dev.hiabstract.com/suggested-response",
