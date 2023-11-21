@@ -38,11 +38,13 @@ app.post("/send-email", async (req, res) => {
         body: JSON.stringify({
           ticket_id: req.body.ticket_id,
           customer_id: response.data.customer.id,
-          brand: "carebears",
+          brand: "fellow",
           messages: formattedText,
         }),
       }
     ).then(response => response.json());
+
+    console.log("suggested response ", suggestedReplyResponse);
 
     // const suggestedReplyResponse = await axios({
     //   method: "post",
