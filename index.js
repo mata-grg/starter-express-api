@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 const username = "p3v1tml8@duck.com";
 const password =
-  "e4fdf9a8ce47d91eac0902a2cc079d04001214bc01f120d67914306ffaa75af1";
+  "aa56299bf085461221c7281003e90b96ba5f69588bf47dcc3a1b47431a450d5c";
 
 app.post("/send-email", async (req, res) => {
   try {
@@ -37,7 +37,7 @@ app.post("/send-email", async (req, res) => {
       data: {
         ticket_id: req.body.ticket_id,
         customer_id: response.data.customer.id,
-        brand: "carebears",
+        brand: "fellow",
         messages: formattedText,
       },
     });
