@@ -9,7 +9,7 @@ const port = 3000;
 // Middleware to parse JSON in the request body
 app.use(bodyParser.json());
 
-const username = "p3v1tml8@duck.com";
+const username = "jsq7tn70@duck.com";
 const password =
   "aa56299bf085461221c7281003e90b96ba5f69588bf47dcc3a1b47431a450d5c";
 
