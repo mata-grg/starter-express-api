@@ -17,7 +17,7 @@ app.post("/send-email", async (req, res) => {
   try {
     const response = await axios({
       method: "get",
-      url: `https://nisolo.gorgias.com/api/tickets/${req.body.ticket_id}`,
+      url: `https://mossyoak.gorgias.com/api/tickets/${req.body.ticket_id}`,
       auth: {
         username: username,
         password: password,
