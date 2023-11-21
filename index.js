@@ -31,16 +31,29 @@ app.post("/send-email", async (req, res) => {
       };
     });
 
-    const suggestedReplyResponse = await axios({
-      method: "post",
-      url: "https://dev.hiabstract.com/suggested-response",
-      data: {
-        ticket_id: req.body.ticket_id,
-        customer_id: response.data.customer.id,
-        brand: "carebears",
-        messages: formattedText,
-      },
-    });
+    const suggestedReplyResponse = await fetch(
+      "https://dev.hiabstract.com/suggested-response",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          ticket_id: req.body.ticket_id,
+          customer_id: response.data.customer.id,
+          brand: "carebears",
+          messages: formattedText,
+        }),
+      }
+    ).then(response => response.json());
+
+    // const suggestedReplyResponse = await axios({
+    //   method: "post",
+    //   url: "https://dev.hiabstract.com/suggested-response",
+    //   data: {
+    //     ticket_id: req.body.ticket_id,
+    //     customer_id: response.data.customer.id,
+    //     brand: "carebears",
+    //     messages: formattedText,
+    //   },
+    // });
 
     // Configure Nodemailer with your email credentials
     const transporter = nodemailer.createTransport({
